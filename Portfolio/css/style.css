@@ -234,19 +234,60 @@ section {
     box-shadow: 0 0 15px rgba(0, 171, 240, 0.5);
 }
 
+/* --- Primary Button Styling and Animation --- */
+
+/* Replace your existing .btn-primary rule with this */
 .btn-primary {
     background-color: var(--main-color);
     border-color: var(--main-color);
     font-weight: 600;
     padding: 12px;
-    transition: all 0.3s ease;
+    transform: translateY(0); /* Set the starting position */
+    box-shadow: 0 4px 15px rgba(0, 171, 240, 0.0); /* Start with no glow */
+
+    /* THIS IS THE KEY: We explicitly tell the browser to animate the lift (transform) and glow (box-shadow) smoothly. */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Replace your existing .btn-primary:hover rule with this */
 .btn-primary:hover {
+    /* This makes the button lift upwards */
+    transform: translateY(-5px); 
+    
+    /* This adds a more pronounced shadow to enhance the lifted feel */
+    box-shadow: 0 8px 25px rgba(0, 171, 240, 0.4);
+}
+
+/* --- Fully Dedicated Download CV Button --- */
+
+/* --- Fully Dedicated Download CV Button --- */
+.btn-cv {
+    /* Base styling */
+    display: inline-block;
+    font-weight: 600;
+    color: #081b29; /* Button text color */
+    background-color: var(--main-color); /* Main blue color */
+    border: 1px solid var(--main-color);
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    /* Animation starting point */
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 171, 240, 0.0);
+    /* Match .btn-primary: only animate transform and box-shadow for smoothness */
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1), background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.btn-cv:hover {
+    /* Darker background color on hover */
     background-color: #008fcc;
     border-color: #008fcc;
-    box-shadow: 0 0 20px rgba(0, 171, 240, 0.6);
-    transform: translateY(-3px);
+    /* The 'lift' animation */
+    transform: translateY(-7px) scale(1.03);
+    /* The 'glow' effect */
+    box-shadow: 0 12px 32px rgba(0, 171, 240, 0.45);
+    color: #ffffff; /* Change text color to white on hover */
 }
 
 .social-links .social-icon {
