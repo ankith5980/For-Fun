@@ -26,10 +26,11 @@ $(document).ready(function() {
     // Initialize Typed.js
     const typed = new Typed('#typed-text', {
         strings: ['Full-Stack Developer.', 'Creative Problem Solver.', 'Lifelong Learner.', 'Tech Enthusiast.'],
-        typeSpeed: 70,
-        backSpeed: 50,
-        loop: true,
-        backDelay: 1500,
+        typeSpeed: 60,      // Slightly slower, more natural typing speed.
+        backSpeed: 40,      // Slower and less aggressive backspacing.
+        backDelay: 2000,    // Adds a 2-second pause after a sentence is typed.
+        startDelay: 1000,   // Waits 1 second before starting the animation on page load.
+        loop: true
     });
     
     // Smooth scrolling for navigation links
@@ -41,7 +42,7 @@ $(document).ready(function() {
 
             $('html, body').animate({
                 scrollTop: $(hash).offset().top - 70 // Adjust for fixed navbar height
-            }, 800, function() {
+            }, 300, function() {
                 window.location.hash = hash;
             });
         }
