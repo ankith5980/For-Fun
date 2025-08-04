@@ -41,11 +41,21 @@ $(document).ready(function() {
             const hash = this.hash;
 
             $('html, body').animate({
-                scrollTop: $(hash).offset().top - 70 // Adjust for fixed navbar height
+                scrollTop: $(hash).offset().top - 90 // Adjust for fixed navbar height
             }, 300, function() {
                 window.location.hash = hash;
             });
         }
     });
 
+});
+
+// This code is correct and does NOT need to be changed again
+$(window).on('scroll', function() {
+    const navbar = $('.navbar');
+    if ($(window).scrollTop() > 100) {
+        navbar.addClass('scrolled');
+    } else {
+        navbar.removeClass('scrolled');
+    }
 });

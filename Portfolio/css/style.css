@@ -35,7 +35,7 @@ html {
 .content-wrapper {
     position: relative;
     z-index: 1;
-    padding-top: 56px; /* Adjust for fixed navbar height */
+    padding-top: 90px; /* Adjust for fixed navbar height */
 }
 
 /* --- Header / Navbar --- */
@@ -44,6 +44,9 @@ html {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 171, 240, 0.1);
+    padding-top: 0.75rem; /* Adjusted for better spacing */
+    padding-bottom: 0.75rem; /* Added bottom padding for consistency */
+    transition: padding 0.3s ease, background-color 0.3s ease;
 }
 
 .navbar-brand {
@@ -321,4 +324,84 @@ section {
     margin: 0;
     font-size: 0.9rem;
     color: #a0c3e0;
+}
+
+/* --- Navbar Scroll Transition (Corrected) --- */
+
+.navbar-brand-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Base style for hiding/showing the brand versions */
+.default-brand, .scrolled-brand {
+    display: flex;
+    align-items: center;
+    white-space: nowrap; /* Prevents text wrapping during animation */
+    overflow: hidden;    /* Hides content smoothly */
+    transition: opacity 0.4s ease, max-width 0.4s ease; /* Animate width and opacity */
+}
+
+/* Specific styling for the scrolled brand's contents */
+.scrolled-brand {
+    gap: 12px;
+}
+
+.nav-profile-img {
+    width: 40px;
+    height: 40px;
+    min-width: 40px; /* Prevents image from shrinking */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--main-color);
+    background-color: var(--header-bg); /* Matches the navbar background */
+    transition: border-color 0.3s ease;
+}
+
+.nav-profile-name {
+    font-size: 1rem;
+    font-weight: 600;
+    /* color: var(--text-color); */
+    color: #f39c12;
+
+    opacity: 0; /* Slightly faded for better visibility */
+    transform: translateY(5px); /* Slightly lifted for better visibility */
+
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for visibility */
+
+    transition-delay: 0.2s; /* Delay to ensure it appears after the brand */
+}
+
+.navbar.scrolled .nav-profile-name {
+    /* On scroll, become visible and move to the original position */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---- LOGIC for Hiding and Showing ---- */
+
+/* On page load, the scrolled brand is hidden (0 width and invisible) */
+.scrolled-brand {
+    max-width: 0px;
+    opacity: 0;
+}
+
+/* On page load, the default brand is visible */
+.default-brand {
+    max-width: 200px; /* Adjust if "My Portfolio" is longer */
+    opacity: 1;
+}
+
+/* When the .scrolled class is active... */
+
+/* Hide the default brand */
+.navbar.scrolled .default-brand {
+    max-width: 0px;
+    opacity: 0;
+}
+
+/* Show the scrolled brand */
+.navbar.scrolled .scrolled-brand {
+    max-width: 200px; /* Set a max width to animate to */
+    opacity: 1;
 }
