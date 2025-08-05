@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ankith | Full-Stack Developer</title>
+  <meta name="description" content="Full-stack developer specializing in modern web applications, AI integration, and scalable backend systems.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Background Animation -->
+  <div class="background-animation">
+    <div class="gradient-bg"></div>
+    <div class="particles" id="particles-container"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="#" class="logo">Ankith.dev</a>
+        <nav class="nav">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Building the Future with Code</h1>
+        <p class="hero-subtitle">Full-Stack Developer & AI Enthusiast</p>
+        <p class="hero-description">
+          I create modern, scalable applications that solve real-world problems. 
+          Specializing in backend systems, AI integration, and elegant user experiences.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">Passionate developer with a love for clean code and innovative solutions</p>
+      </div>
+      
+      <div class="profile">
+        <img src="Photo.jpg" alt="Ankith's profile picture" class="profile-image">
+        <div class="profile-content">
+          <h3 class="profile-name">Ankith Pratheesh</h3>
+          <p class="profile-title">Full-Stack Developer & AI Specialist</p>
+          <p class="profile-description">
+            I'm a software developer with expertise in building modern, scalable applications. 
+            My passion lies in creating intelligent systems that leverage AI and machine learning 
+            to solve complex problems. With experience in both frontend and backend development, 
+            I bring ideas to life through clean, maintainable code and intuitive user experiences.
+          </p>
+          <div class="hero-actions">
+            <a href="Ankith_CV.pdf" download class="btn btn-primary">Download CV</a>
+            <a href="#contact" class="btn btn-secondary">Let's Talk</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">A showcase of my recent work and technical expertise</p>
+      </div>
+      
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3 class="project-title">Smart Agent System</h3>
+          <p class="project-description">
+            Designed and implemented a sophisticated multi-agent orchestration framework using LangGraph and OpenAI. 
+            This system enables scalable, cooperative workflows for intelligent decision-making processes.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">LangGraph</span>
+            <span class="tech-tag">OpenAI</span>
+            <span class="tech-tag">FastAPI</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3 class="project-title">Portfolio Builder</h3>
+          <p class="project-description">
+            Dynamic portfolio generator with customizable templates and real-time GitHub integration. 
+            Features automated updates and AI-powered content suggestions.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">GitHub API</span>
+            <span class="tech-tag">AI Integration</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3 class="project-title">TaskFlow AI</h3>
+          <p class="project-description">
+            Multi-step task delegation engine with plugin-based LLM agents. 
+            Inspired by Auto-GPT and CrewAI frameworks for intelligent automation.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">LangChain</span>
+            <span class="tech-tag">Plugin System</span>
+            <span class="tech-tag">Microservices</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3 class="project-title">E-Commerce Platform</h3>
+          <p class="project-description">
+            Full-stack e-commerce solution with real-time inventory management, 
+            payment processing, and advanced analytics dashboard.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Stripe</span>
+            <span class="tech-tag">Redis</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3 class="project-title">Real-time Chat App</h3>
+          <p class="project-description">
+            Scalable real-time messaging application with WebSocket connections, 
+            file sharing, and end-to-end encryption.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Socket.io</span>
+            <span class="tech-tag">Express.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">React</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3 class="project-title">AI Content Generator</h3>
+          <p class="project-description">
+            Intelligent content creation tool powered by GPT-4, featuring 
+            customizable templates and multi-language support.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">OpenAI API</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">Vue.js</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <p class="section-subtitle">Technologies and tools I use to bring ideas to life</p>
+      </div>
+      
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3 class="skill-category-title">Programming Languages</h3>
+          <ul class="skill-list">
+            <li class="skill-item">TypeScript</li>
+            <li class="skill-item">JavaScript</li>
+            <li class="skill-item">Python</li>
+            <li class="skill-item">Go</li>
+            <li class="skill-item">Rust</li>
+            <li class="skill-item">SQL</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-category-title">Frontend Development</h3>
+          <ul class="skill-list">
+            <li class="skill-item">React</li>
+            <li class="skill-item">Next.js</li>
+            <li class="skill-item">Vue.js</li>
+            <li class="skill-item">Tailwind CSS</li>
+            <li class="skill-item">TypeScript</li>
+            <li class="skill-item">Redux</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-category-title">Backend Development</h3>
+          <ul class="skill-list">
+            <li class="skill-item">Node.js</li>
+            <li class="skill-item">Express.js</li>
+            <li class="skill-item">FastAPI</li>
+            <li class="skill-item">Flask</li>
+            <li class="skill-item">GraphQL</li>
+            <li class="skill-item">REST APIs</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-category-title">AI & Machine Learning</h3>
+          <ul class="skill-list">
+            <li class="skill-item">LangChain</li>
+            <li class="skill-item">OpenAI API</li>
+            <li class="skill-item">TensorFlow</li>
+            <li class="skill-item">PyTorch</li>
+            <li class="skill-item">NLP</li>
+            <li class="skill-item">Computer Vision</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-category-title">Databases & Cloud</h3>
+          <ul class="skill-list">
+            <li class="skill-item">PostgreSQL</li>
+            <li class="skill-item">MongoDB</li>
+            <li class="skill-item">Redis</li>
+            <li class="skill-item">AWS</li>
+            <li class="skill-item">Docker</li>
+            <li class="skill-item">Kubernetes</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-category-title">Tools & DevOps</h3>
+          <ul class="skill-list">
+            <li class="skill-item">Git</li>
+            <li class="skill-item">GitHub Actions</li>
+            <li class="skill-item">CI/CD</li>
+            <li class="skill-item">VSCode</li>
+            <li class="skill-item">Linux</li>
+            <li class="skill-item">Nginx</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Ready to start a project or just want to chat? Let's connect!</p>
+      </div>
+      
+      <form class="contact-form" id="contact-form">
+        <div id="form-message"></div>
+        
+        <div class="form-group">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="subject" class="form-label">Subject</label>
+          <input type="text" id="subject" name="subject" class="form-input" placeholder="What's this about?" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="message" class="form-label">Message</label>
+          <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your project or just say hello!" required></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+
+      <div class="social-links">
+        <a href="https://github.com/your-github-username" target="_blank" class="social-link">
+          <span>GitHub</span>
+        </a>
+        <a href="https://linkedin.com/in/your-linkedin-username" target="_blank" class="social-link">
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://twitter.com/your-twitter-username" target="_blank" class="social-link">
+          <span>Twitter</span>
+        </a>
+        <a href="mailto:ankithpratheesh147@gmail.com" class="social-link">
+          <span>Email</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2025 Ankith Pratheesh. Built with ❤️ and lots of ☕</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
