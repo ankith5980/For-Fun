@@ -326,82 +326,72 @@ section {
     color: #a0c3e0;
 }
 
-/* --- Navbar Scroll Transition (Corrected) --- */
+/* --- Navbar Scroll Transition (Final Version with Morphing Brand) --- */
 
-.navbar-brand-container {
+/* This helps position the new centered text correctly */
+.navbar > .container {
+    position: relative;
+}
+
+/* This is the main brand container now */
+#master-brand {
     display: flex;
     align-items: center;
+    gap: 12px; /* Creates space between the image and name when visible */
 }
 
-/* Base style for hiding/showing the brand versions */
-.default-brand, .scrolled-brand {
-    display: flex;
-    align-items: center;
-    white-space: nowrap; /* Prevents text wrapping during animation */
-    overflow: hidden;    /* Hides content smoothly */
-    transition: opacity 0.4s ease, max-width 0.4s ease; /* Animate width and opacity */
-}
-
-/* Specific styling for the scrolled brand's contents */
-.scrolled-brand {
-    gap: 12px;
-}
-
-.nav-profile-img {
+/* The profile picture inside the new brand */
+#master-brand .nav-profile-img {
+    /* Set dimensions */
     width: 40px;
     height: 40px;
-    min-width: 40px; /* Prevents image from shrinking */
+    min-width: 40px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--main-color);
-    background-color: var(--header-bg); /* Matches the navbar background */
-    transition: border-color 0.3s ease;
+    
+    /* Animation properties */
+    transition: max-width 0.4s ease, opacity 0.4s ease, margin-right 0.4s ease;
 }
 
-.nav-profile-name {
-    font-size: 1rem;
+/* The name inside the new brand */
+#master-brand .nav-profile-name {
+    font-size: 1.25rem; /* Make the name a bit more prominent */
     font-weight: 600;
-    /* color: var(--text-color); */
-    color: #f39c12;
-
-    opacity: 0; /* Slightly faded for better visibility */
-    transform: translateY(5px); /* Slightly lifted for better visibility */
-
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for visibility */
-
-    transition-delay: 0.2s; /* Delay to ensure it appears after the brand */
+    color: #F39C12; /* The orange color */
 }
 
-.navbar.scrolled .nav-profile-name {
-    /* On scroll, become visible and move to the original position */
-    opacity: 1;
-    transform: translateY(0);
+/* Style for the centered text container */
+.navbar-center-content {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.4s ease;
 }
 
-/* ---- LOGIC for Hiding and Showing ---- */
+/* --- STATE LOGIC --- */
 
-/* On page load, the scrolled brand is hidden (0 width and invisible) */
-.scrolled-brand {
-    max-width: 0px;
+/* STATE 1: At the top of the page (navbar does NOT have .scrolled class) */
+.navbar:not(.scrolled) #master-brand .nav-profile-img {
+    max-width: 0; /* Hide the image by collapsing its width */
     opacity: 0;
+    margin-right: -12px; /* Collapse the gap to keep the name perfectly aligned */
+}
+.navbar:not(.scrolled) .navbar-center-content {
+    opacity: 0; /* Hide the centered typed text */
 }
 
-/* On page load, the default brand is visible */
-.default-brand {
-    max-width: 200px; /* Adjust if "My Portfolio" is longer */
+/* STATE 2: Scrolled down (navbar HAS .scrolled class) */
+.navbar.scrolled #master-brand .nav-profile-img {
+    max-width: 40px; /* Reveal the image by expanding its width */
     opacity: 1;
+    margin-right: 0; /* Restore the default gap */
 }
-
-/* When the .scrolled class is active... */
-
-/* Hide the default brand */
-.navbar.scrolled .default-brand {
-    max-width: 0px;
-    opacity: 0;
-}
-
-/* Show the scrolled brand */
-.navbar.scrolled .scrolled-brand {
-    max-width: 200px; /* Set a max width to animate to */
-    opacity: 1;
+.navbar.scrolled .navbar-center-content {
+    opacity: 1; /* Show the centered typed text */
 }

@@ -59,3 +59,16 @@ $(window).on('scroll', function() {
         navbar.removeClass('scrolled');
     }
 });
+
+// Add this new block to the end of js/script.js
+
+// Initialize a second Typed.js instance for the navbar
+const navbarTyped = new Typed('#navbar-typed-text', {
+    strings: ['Full-Stack Developer.', 'Creative Problem Solver.', 'Lifelong Learner.', 'Tech Enthusiast.'],
+    typeSpeed: 60,
+    backSpeed: 40,
+    backDelay: 2000,
+    startDelay: 1000,
+    loop: true,
+    showCursor: false // Hides the blinking cursor in the navbar
+});
