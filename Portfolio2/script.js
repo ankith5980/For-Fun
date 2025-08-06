@@ -173,65 +173,6 @@ class ScrollAnimations {
   }
 }
 
-// Contact Form Handler
-class ContactForm {
-  constructor() {
-    this.init();
-  }
-
-  init() {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      this.handleSubmit();
-    });
-  }
-
-  async handleSubmit() {
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
-    
-    // Show loading state
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-
-    try {
-      // Send to backend
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
-      });
-
-      if (response.ok) {
-        this.showMessage('Message sent successfully! I\'ll get back to you soon.', 'success');
-        contactForm.reset();
-      } else {
-        throw new Error('Failed to send message');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      this.showMessage('Failed to send message. Please try again or email me directly.', 'error');
-    } finally {
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
-    }
-  }
-
-  showMessage(message, type) {
-    formMessage.innerHTML = `<div class="message ${type}">${message}</div>`;
-    formMessage.scrollIntoView({ behavior: 'smooth' });
-    
-    // Auto-hide after 5 seconds
-    setTimeout(() => {
-      formMessage.innerHTML = '';
-    }, 5000);
-  }
-}
-
 // Mouse Movement Effects
 class MouseEffects {
   constructor() {
@@ -332,7 +273,6 @@ document.addEventListener('DOMContentLoaded', () => {
   new HeaderScroll();
   new MobileMenu();
   new ScrollAnimations();
-  new ContactForm();
   new MouseEffects();
   new TypingAnimation();
   new PerformanceOptimizer();
