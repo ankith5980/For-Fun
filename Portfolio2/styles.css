@@ -240,8 +240,14 @@ body {
   background: none;
   border: none;
   color: var(--text-primary);
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1001; /* Ensure it's above the mobile nav */
+}
+
+.mobile-menu-btn.active {
+  transform: rotate(90deg);
 }
 
 /* Hero Section */

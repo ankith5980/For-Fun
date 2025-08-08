@@ -109,6 +109,9 @@ class MobileMenu {
 
   toggleMenu() {
     this.isOpen = !this.isOpen;
+    nav.classList.toggle('active');
+    mobileMenuBtn.classList.toggle('active');
+    mobileMenuBtn.textContent = this.isOpen ? '✖' : '☰';
     if (this.isOpen) {
       this.openMenu();
     } else {
@@ -143,6 +146,9 @@ class MobileMenu {
     nav.style.padding = '';
     nav.style.gap = '';
     this.isOpen = false;
+    nav.classList.remove('active');
+    mobileMenuBtn.classList.remove('active');
+    mobileMenuBtn.textContent = '☰';
   }
 }
 
