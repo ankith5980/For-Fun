@@ -1,9 +1,0 @@
-Customize the Content:
-
-In index.html, replace all placeholder text like [Your Name], project descriptions, and skill lists with your own information.
-
-Replace https://via.placeholder.com/150 with the path to your own profile picture.
-
-Update the links in the "Connect with Me" section to point to your actual profiles.
-
-Crucially for the contact form: Go to Formspree, create a new form, and replace https://formspree.io/f/your_form_id in the <form> tag with your unique Formspree endpoint URL. This will allow the form to send messages directly to your email.
