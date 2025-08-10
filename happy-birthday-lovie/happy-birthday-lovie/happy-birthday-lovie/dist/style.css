@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 * {
   -webkit-box-sizing: border-box;
@@ -11,85 +9,6 @@
 body {
   background: #E5E5E5;
   background-image: url("https://photos.google.com/photo/AF1QipNYcNwj59pocxqoUzjzcTNNiOqkzJT4PmVS7YWB");
-  overflow-x: hidden;
-}
-
-/* Intro Page Styles */
-.intro-page {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #FFE6E6 0%, #F7D8D8 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  transition: transform 1.5s ease-in-out;
-}
-
-.intro-page.slide-up {
-  transform: translateY(-100%);
-}
-
-.intro-content {
-  text-align: center;
-  opacity: 0;
-  transform: scale(0.9);
-  animation: fadeIn 2s ease-out forwards;
-}
-
-.handwritten-name {
-  font-family: 'Great Vibes', cursive;
-  font-size: 8em;
-  color: #FF5555;
-  margin: 0;
-  padding: 20px;
-  position: relative;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  animation: writing 3s ease-out forwards;
-}
-
-.intro-subtext {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.5em;
-  color: #8b6a60;
-  margin-top: 20px;
-  opacity: 0;
-  animation: fadeIn 2s ease-out 2s forwards;
-}
-
-@keyframes writing {
-  0% {
-    width: 0;
-    opacity: 0;
-  }
-  100% {
-    width: 100%;
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Original card styles */
-#card {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-#card.visible {
-  opacity: 1;
 }
 
 #card-front {
@@ -572,14 +491,12 @@ footer {
 
 /* Confetti effect */
 .confetti {
-  position: fixed;
+  position: absolute;
   width: 10px;
   height: 10px;
   background: var(--confetti-color, red);
   top: -10px;
   animation: fall linear infinite;
-  pointer-events: none;
-  z-index: 999;
 }
 
 @keyframes fall {

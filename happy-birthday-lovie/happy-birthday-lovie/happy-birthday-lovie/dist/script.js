@@ -7,14 +7,7 @@
       openB = $('open'),
       closeB = $('close'),
       timer = null;
-      
-  // Handle intro page transition
-  setTimeout(() => {
-    document.querySelector('.intro-page').classList.add('slide-up');
-    setTimeout(() => {
-      card.style.opacity = '1';
-    }, 1500);
-  }, 4000); // Wait 4 seconds before transitioning
+  console.log('wat', card);
   openB.addEventListener('click', function () {
     card.setAttribute('class', 'open-half');
     if (timer) clearTimeout(timer);
@@ -45,7 +38,6 @@ window.addEventListener('load', () => {
 
 // Optional confetti generator
 function launchConfetti() {
-  document.body.style.overflow = 'hidden'; // Prevent scrolling during confetti
   const colors = ['#ff4e50', '#fc913a', '#f9d423', '#ede574', '#e1f5c4'];
   for (let i = 0; i < 50; i++) {
     const conf = document.createElement('div');
@@ -56,9 +48,6 @@ function launchConfetti() {
     document.body.appendChild(conf);
     setTimeout(() => conf.remove(), 5000);
   }
-  setTimeout(() => {
-    document.body.style.overflow = ''; // Restore scrolling after confetti
-  }, 5000);
 }
 
 // Trigger confetti when card opens fully
