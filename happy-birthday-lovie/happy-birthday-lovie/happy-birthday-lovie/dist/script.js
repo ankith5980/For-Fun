@@ -7,7 +7,14 @@
       openB = $('open'),
       closeB = $('close'),
       timer = null;
-  console.log('wat', card);
+      
+  // Handle intro page transition
+  setTimeout(() => {
+    document.querySelector('.intro-page').classList.add('slide-up');
+    setTimeout(() => {
+      card.style.opacity = '1';
+    }, 1500);
+  }, 4000); // Wait 4 seconds before transitioning
   openB.addEventListener('click', function () {
     card.setAttribute('class', 'open-half');
     if (timer) clearTimeout(timer);
